@@ -1,0 +1,55 @@
+h2 {
+text-align: center;
+padding-top: 5px;
+
+}
+
+#body{
+	height: 500px;
+	background-size: cover;
+	padding-top: 70px;
+
+}
+
+#container {
+	
+	border: 15px solid black;
+	width: 500px;
+	height: 370px;
+	margin: auto;
+}
+
+#container1 {
+	background-color: grey;
+	width: 500px;
+	height: 370px;
+}
+
+p {
+		color: white;
+}
+
+#text{
+
+	width: 350px;
+	height: 200px;
+	margin: auto;
+	padding-top: 70px;
+
+}
+
+#messagebox {
+
+ width: 350px;
+ height: 150px;
+ border-radius: 15px;
+ background-color: lightgrey;
+
+}
+
+
+
+
+
+
+
