@@ -9,7 +9,9 @@
 <div id="body">
     <div id="container">
     <div id="container1">
-    <div id="text"><textarea id="messagebox" onkeypress="characterDecrement()"></textarea>
+    <div id="text">
+    <p id ="title">MY MESSAGE</p>
+    <textarea id="messagebox" onkeypress="limitTextCount(messagebox,character_count,140)"></textarea>
     <p id="character_count">140 characters</p>
 	</div>
 	</div>
@@ -17,12 +19,22 @@
 	</div>
 
 <script>
-function characterDecrement{
+function limitTextCount(text_content_id, max_mes_id, max_limit)
+{
+    var text_content = document.getElementById("messagebox");
+    var max_id = document.getElementById("character_count");
+    var text_content_length = text_content.value.length +1;
 
-
-
-
+    if (text_content_length > max_limit)
+    {
+        text_content.value = text_content.value.substring(0, max_limit);
+    }
+   
+    max_id.innerHTML = (max_limit - text_content_length) + ' characters';
+    if(max_limit - text_content_length <= 0 ){
+    	max_id.innerHTML = ' 0 character. Stop now';
+    }
 }
 </script>
-	</body>
+</body>
 </html>

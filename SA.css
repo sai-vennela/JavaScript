@@ -25,9 +25,14 @@ padding-top: 5px;
 	height: 370px;
 }
 
+#title {
+	text-align: center;
+}
 p {
 		color: white;
 		font-weight: bold;
+		font-family: sans-serif;
+		font-size: 17px;
 }
 
 #text{
