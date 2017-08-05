@@ -11,37 +11,42 @@
     <div id="container1">
     <div id="text">
     <p id ="title">MY MESSAGE</p>
-    <textarea id="messagebox" onkeyup="limitTextCount()"></textarea>
+    <textarea id="messagebox" onkeypress="limitTextCount()" onkeyup="ascii_count()"></textarea>
     <p id="character_count">140 characters</p>
     <p id="ascii"></p>
-	</div>
-	</div>
-	</div>
-	</div>
+    </div>
+    </div>
+    </div>
+    </div>
 
 <script>
 function limitTextCount()
 {
-    var ascii_label = document.getElementById("ascii");
     var text_content = document.getElementById("messagebox");
     var max_id = document.getElementById("character_count");
     var max_limit = 140;
-
-    var text_content_length = text_content.value.length;
+    var text_content_length = text_content.value.length + 1;
 
     if (text_content_length > max_limit)
     {
-        text_content.value = text_content.value.substring(0, max_limit);
+        text_content.value = text_content.value.substring(0, max_limit-1);
     }
    
     max_id.innerHTML = (max_limit - text_content_length) + ' characters';
     if(max_limit - text_content_length <= 0 ){
-    	max_id.innerHTML = ' 0 character. Stop now';
+        max_id.innerHTML = ' 0 character. Stop now';
 
-    }
-    ascii_label.innerHTML = 'Last Key in ASCII code:' + text_content.value.charCodeAt(text_content_length-1);
-  
+    } 
     
+}
+
+function ascii_count()
+{
+        var ascii_label = document.getElementById("ascii");
+        var text_content = document.getElementById("messagebox");
+        var text_content_length = text_content.value.length;
+
+        ascii_label.innerHTML = 'Last Key in ASCII code:' + text_content.value.charCodeAt(text_content_length - 1);
 }
 </script>
 </body>
