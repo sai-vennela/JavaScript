@@ -6,6 +6,7 @@
 </head>
 
 <body>
+<!--Container for message box -->
 <div id="body">
     <div id="container">
     <div id="container1">
@@ -20,6 +21,7 @@
     </div>
 
 <script>
+//Function to limit no. of characters to 140
 function limitTextCount()
 {
     var text_content = document.getElementById("messagebox");
@@ -32,7 +34,7 @@ function limitTextCount()
         text_content.value = text_content.value.substring(0, max_limit-1);
     }
    
-    max_id.innerHTML = (max_limit - text_content_length) + ' characters';
+    max_id.innerHTML = (max_limit - text_content_length);
     if(max_limit - text_content_length <= 0 ){
         max_id.innerHTML = ' 0 character. Stop now';
 
@@ -40,6 +42,7 @@ function limitTextCount()
     
 }
 
+//Function to display the last key in ASCII code
 function ascii_count()
 {
         var ascii_label = document.getElementById("ascii");
